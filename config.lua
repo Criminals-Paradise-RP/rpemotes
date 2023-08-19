@@ -21,22 +21,22 @@ Config = {
     AllowedInCars = true,
     -- You can disable the menu here / change the keybind. It is currently set to F5
     MenuKeybindEnabled = true,
-    MenuKeybind = 'f4', -- Get the button string here https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
+    MenuKeybind = 'f6', -- Get the button string here https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
     -- You can disable the Favorite emote keybinding here.
-    FavKeybindEnabled = true,
+    FavKeybindEnabled = false,
     FavKeybind = 'capital', -- Get the button string here https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
     -- You can change the header image for the menu here
     -- Use a 512 x 128 image!
     -- Note this might cause an issue of the image getting stuck on peoples screens
-    CustomMenuEnabled = true,
+    CustomMenuEnabled = false,
     MenuImage = "https://i.giphy.com/media/ldgXxQ6pJ23yh6Lvjd/giphy.gif", ----[Custom banner IMGUR or GIPHY URLs go here ]---
     -- You can change the menu image by pasting a link above. It must be the same width and length
     -- You can change the name of the menu here or leave it blank to remove the text in front of the custom banners
-    MenuTitle = "",
+    MenuTitle = "Criminals Paradise RP",
     -- You can change the menu position here
     MenuPosition = "right", -- (left, right)
     -- You can enable or disable the Ragdoll keybinding here.
-    RagdollEnabled = false,
+    RagdollEnabled = true,
     RagdollKeybind = 'u', -- Get the button string here https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
     -- You can enable or disable Ragdoll as Toggle here. Only works if RagdollEnabled is set to true.
     RagdollAsToggle = true,
@@ -57,7 +57,7 @@ Config = {
     -- If you don't like gta notifications, you can disable them here to have messages in the chat.
     NotificationsAsChatMessage = false,
     -- Used for few framework dependent things. Accepted values: "qb-core", false
-    Framework = false,
+    Framework = "qb-core",
     -- You can disable the Adult Emotes here.
     AdultEmotesDisabled = false,
     -- You can disable the Animal Emotes here.
@@ -65,13 +65,13 @@ Config = {
     -- Used to enable or disable the search feature in the menu.
     Search = true,
     -- You can disable the handsup here / change the keybind. It is currently set to Y
-    HandsupEnabled = false,
-    HandsupKeybind = 'Y', -- Get the button string here https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
-    HandsupKeybindEnabled = false,
-    HandsupKeybindInCarEnabled = false,
+    HandsupEnabled = true,
+    HandsupKeybind = 'X', -- Get the button string here https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
+    HandsupKeybindEnabled = true,
+    HandsupKeybindInCarEnabled = true,
     PersistentEmoteAfterHandsup = true, -- If true, you will play the emote you were playing previously after you stop handsup.
     -- You can disable the fingrer pointing here / change the keybind. It is currently set to B
-    PointingEnabled = false,
+    PointingEnabled = true,
     PointingKeybindEnabled = true,
     PointingKeybind = 'B', -- Get the button string here https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
     PersistentEmoteAfterPointing = true, -- If true, you will play the emote you were playing previously after you stop pointing.
@@ -81,15 +81,15 @@ Config = {
     CrouchKeybind = 'lcontrol', -- The default crouch keybind, get the button string here: https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
     CrouchOverride = false, -- If true, you won't enter stealth mode even if the crouch key and the "duck" key are the same.
     -- If crawling should be enabled.
-    CrawlEnabled = true,
-    CrawlKeybindEnabled = true, -- If true, crawling will use keybinds.
+    CrawlEnabled = false,
+    CrawlKeybindEnabled = false, -- If true, crawling will use keybinds.
     CrawlKeybind = 'rcontrol', -- The default crawl keybind, get the button string here: https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
     -- If turned on, playing an emote will cancel the previous one.
-    CancelPreviousEmote = false,
+    CancelPreviousEmote = true,
     -- If turned off, opening the menu and playing an emote will not be possible while swimming
     AllowInWater = true,
     -- If set to true, the /binoculars command will be enabled.
-    BinocularsEnabled = true,
+    BinocularsEnabled = false,
     -- If set to true, you'll be able to toggle between different vision modes in the binoculars
     AllowVisionsToggling = true,
     -- If set to true, the /newscam command will be enabled.
