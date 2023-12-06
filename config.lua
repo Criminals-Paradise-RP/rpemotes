@@ -11,15 +11,16 @@ Config = {
     -- Set this to true to enable some extra prints
     DebugDisplay = false,
     -- Set this to false if you have something else on X, and then just use /e c to cancel emotes.
-    EnableXtoCancel = true,
+    EnableCancelKeybind = true,
     CancelEmoteKey = 'x', -- Get the button string here https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
     -- Set this to true if you want to disarm the player when they play an emote.
     DisarmPlayer = false,
-    -- Set this to false if you want to disallow people punching while emotes are playing 
-    AllowPunching = true,
+    -- Set this to true if you want to allow people punching while emotes are playing
+    AllowPunching = false,
     -- Set this if you really wanna disable emotes in cars, as of 1.7.2 they only play the upper body part if in vehicle
     AllowedInCars = true,
-    -- You can disable the menu here / change the keybind. It is currently set to F5
+    -- You can disable the menu here / change the keybind. It is currently set to F4
+    -- The keybind you set here will be server sided for new players. existing players can set their own in the ESC menu keybind settings
     MenuKeybindEnabled = true,
     MenuKeybind = 'f6', -- Get the button string here https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
     -- You can disable the Favorite emote keybinding here.
@@ -29,7 +30,7 @@ Config = {
     -- Use a 512 x 128 image!
     -- Note this might cause an issue of the image getting stuck on peoples screens
     CustomMenuEnabled = false,
-    MenuImage = "https://i.giphy.com/media/ldgXxQ6pJ23yh6Lvjd/giphy.gif", ----[Custom banner IMGUR or GIPHY URLs go here ]---
+    MenuImage = "https://i.imgur.com/osq2J0h.png", ----[Custom banner IMGUR or GIPHY URLs go here ]---
     -- You can change the menu image by pasting a link above. It must be the same width and length
     -- You can change the name of the menu here or leave it blank to remove the text in front of the custom banners
     MenuTitle = "Criminals Paradise RP",
@@ -46,10 +47,8 @@ Config = {
     PersistentExpression = true,
     -- You can disable the Walking Styles menu here.
     WalkingStylesEnabled = true,
-    -- Saves walk styles to client and applies them periodically
+    -- Saves walk styles to client and applies them on joining
     PersistentWalk = true,
-    -- Polling period to apply persistent walkstyles
-    PersistencePollPeriod = 60000,
     -- You can disable the Shared Emotes here.
     SharedEmotesEnabled = true,
     -- If you have the SQL imported enable this to turn on keybinding.
@@ -74,6 +73,7 @@ Config = {
     PointingEnabled = true,
     PointingKeybindEnabled = true,
     PointingKeybind = 'B', -- Get the button string here https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
+    PointingKeybindInCarEnabled = false,
     PersistentEmoteAfterPointing = true, -- If true, you will play the emote you were playing previously after you stop pointing.
     -- If crouching should be enabled.
     CrouchEnabled = true,

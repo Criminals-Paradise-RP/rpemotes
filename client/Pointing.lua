@@ -10,8 +10,10 @@ local function IsPlayerAiming(player)
     return IsPlayerFreeAiming(player) or IsAimCamActive() or IsAimCamThirdPersonActive()
 end
 
+--- Enabled pointing in a car, however hands up and pointing on a bike is broken until someone can give enough of a fuck to chime in and fix it. ---
+
 local function CanPlayerPoint(playerId, playerPed)
-    if not DoesEntityExist(playerPed) or not IsPedOnFoot(playerPed) or IsPlayerAiming(playerId) or IsPedFalling(playerPed) or IsPedInjured(playerPed) or IsPedInMeleeCombat(playerPed) or IsPedRagdoll(playerPed) then
+    if not DoesEntityExist(playerPed) or IsPedOnAnyBike(playerPed) or IsPlayerAiming(playerId) or IsPedFalling(playerPed) or IsPedInjured(playerPed) or IsPedInMeleeCombat(playerPed) or IsPedRagdoll(playerPed) or not IsPedHuman(playerPed) then
         return false
     end
 
@@ -93,9 +95,7 @@ local function PointingThread()
 end
 
 local function StartPointing()
-    -- Don't start to point if we are prone
-    if IsProne then
-        EmoteChatMessage("You can't point while crawling.")
+    if isInActionWithErrorMessage() then
         return
     end
 
@@ -120,6 +120,9 @@ end
 -- Commands & KeyMapping --
 if Config.PointingEnabled then
     RegisterCommand('pointing', function()
+        if IsPedInAnyVehicle(PlayerPedId(), false) and not Config.PointingKeybindInCarEnabled then
+            return
+        end
         StartPointing()
     end, false)
 

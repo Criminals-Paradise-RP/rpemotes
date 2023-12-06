@@ -5,12 +5,12 @@
 fx_version 'cerulean'
 game 'gta5'
 authors { 'TayMcKenzieNZ', 'MadsL', 'Mathu_lmn', 'Community' }
-description 'RPEmotes V1.3.0'
-version '1.3.0'
+description 'RPEmotes V1.3.8'
+version '1.3.8'
 lua54 'yes'
 
 dependencies {
-    '/server:5848',
+    '/server:6683',
     '/onesync',
 }
 
@@ -22,6 +22,14 @@ dependencies {
 -- server_script '@oxmysql/lib/MySQL.lua'
 
 --#endregion oxmysql
+
+files {
+    'propsets.meta',
+    'conditionalanims.meta',
+}
+
+data_file 'AMBIENT_PROP_MODEL_SET_FILE' 'propsets.meta'
+data_file 'CONDITIONAL_ANIMS_FILE' 'conditionalanims.meta'
 
 shared_scripts {
     'config.lua',
@@ -66,6 +74,8 @@ data_file 'DLC_ITYP_REQUEST' 'stream/brummie_props.ytyp'
 
 data_file 'DLC_ITYP_REQUEST' 'stream/bzzz_props.ytyp'
 
+data_file 'DLC_ITYP_REQUEST' 'bzzz_camp_props.ytyp'
+
 data_file 'DLC_ITYP_REQUEST' 'stream/apple_1.ytyp'
 
 data_file 'DLC_ITYP_REQUEST' 'stream/kaykaymods_props.ytyp'
@@ -77,3 +87,7 @@ data_file 'DLC_ITYP_REQUEST' 'stream/natty_props_lollipops.ytyp'
 data_file 'DLC_ITYP_REQUEST' 'stream/ultra_ringcase.ytyp'
 
 data_file 'DLC_ITYP_REQUEST' 'stream/pata_props.ytyp'
+
+data_file 'DLC_ITYP_REQUEST' 'stream/vedere_props.ytyp'
+
+data_file 'DLC_ITYP_REQUEST' 'stream/pnwsigns.ytyp'

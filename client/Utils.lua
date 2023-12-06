@@ -2,7 +2,16 @@
 --- Download OFFICIAL version and updates ONLY at https://github.com/TayMcKenzieNZ/rpemotes ---
 --- RPEmotes is FREE and ALWAYS will be. STOP PAYING SCAMMY FUCKERS FOR SOMEONE ELSE'S WORK!!! ---
 
-
+-- You can edit this function to add support for your favorite notification system
+function SimpleNotify(message)
+    if Config.NotificationsAsChatMessage then
+        TriggerEvent("chat:addMessage", { color = { 255, 255, 255 }, args = { tostring(message) } })
+    else
+        BeginTextCommandThefeedPost("STRING")
+        AddTextComponentSubstringPlayerName(message)
+        EndTextCommandThefeedPostTicker(0, 1)
+    end
+end
 
 function DebugPrint(args)
     if Config.DebugDisplay then
@@ -14,15 +23,6 @@ function firstToUpper(str)
     return (str:gsub("^%l", string.upper))
 end
 
-function ShowNotification(text)
-    if Config.NotificationsAsChatMessage then
-        TriggerEvent("chat:addMessage", { color = { 255, 255, 255 }, args = { tostring(text) } })
-    else
-        BeginTextCommandThefeedPost("STRING")
-        AddTextComponentSubstringPlayerName(text)
-        EndTextCommandThefeedPostTicker(false, false)
-    end
-end
 
 function IsPlayerAiming(player)
     return (IsPlayerFreeAiming(player) or IsAimCamActive() or IsAimCamThirdPersonActive()) and tonumber(GetSelectedPedWeapon(player)) ~= tonumber(GetHashKey("WEAPON_UNARMED"))
@@ -146,16 +146,6 @@ function NearbysOnCommand(source, args, raw)
     EmoteChatMessage(Config.Languages[lang]['emotemenucmd'])
 end
 
-function SimpleNotify(message)
-    if Config.NotificationsAsChatMessage then
-        TriggerEvent("chat:addMessage", { color = { 255, 255, 255 }, args = { tostring(message) } })
-    else
-        BeginTextCommandThefeedPost("STRING")
-        AddTextComponentSubstringPlayerName(message)
-        EndTextCommandThefeedPostTicker(0, 1)
-    end
-end
-
 function GetClosestPlayer()
     local players = GetPlayers()
     local closestDistance = -1
@@ -188,4 +178,31 @@ function GetPlayers()
     end
 
     return players
+end
+
+---Function that'll check if player is already proning, using news cam or else
+---@param ignores? array|nil key string is the ignored value
+function isInActionWithErrorMessage(ignores)
+    DebugPrint(ignores)
+    DebugPrint('IsProne', IsProne)
+    DebugPrint('IsUsingNewscam', IsUsingNewscam)
+    DebugPrint('IsUsingBinoculars', IsUsingBinoculars)
+    if (ignores == nil) then ignores = {} end
+
+    if not ignores['IsProne'] and IsProne then
+        EmoteChatMessage(Config.Languages[lang]['no_anim_crawling'])
+        return true
+    end
+    if not ignores['IsUsingNewscam'] and IsUsingNewscam then
+        -- TODO: use specific error message
+        EmoteChatMessage(Config.Languages[lang]['no_anim_right_now'])
+        return true
+    end
+    if not ignores['IsUsingBinoculars'] and IsUsingBinoculars then
+        -- TODO: use specific error message
+        EmoteChatMessage(Config.Languages[lang]['no_anim_right_now'])
+        return true
+    end
+
+    return false
 end
