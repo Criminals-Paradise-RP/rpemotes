@@ -23800,6 +23800,41 @@ RP.PropEmotes = {
             EmoteLoop = true,
             EmoteMoving = true,
         }
-  }
-
+  },
+    ["health_insurance"] = {
+        "anim@heists@humane_labs@finale@keycards", 
+        "ped_a_enter_loop", 
+        "Card", 
+        AnimationOptions = {
+            Prop = "m-insurance_prop_card_health",
+            PropBone = 18905,
+            PropPlacement = {0.17, 0.03, 0.04, 1.0, 184.0, 0.0},
+            EmoteLoop = true,
+            EmoteMoving = true,
+        }
+    },
+    ["car_insurance"] = {
+        "anim@heists@humane_labs@finale@keycards", 
+        "ped_a_enter_loop", 
+        "Card", 
+        AnimationOptions = {
+            Prop = "m-insurance_prop_card_vehicle",
+            PropBone = 18905,
+            PropPlacement = {0.17, 0.03, 0.04, 1.0, 184.0, 0.0},
+            EmoteLoop = true,
+            EmoteMoving = true,
+        }
+    },
+    ["car_registration"] = {
+        "anim@heists@humane_labs@finale@keycards", 
+        "ped_a_enter_loop", 
+        "Card", 
+        AnimationOptions = {
+            Prop = "m-insurance_prop_card_vehicle2",
+            PropBone = 18905,
+            PropPlacement = {0.17, 0.03, 0.04, 1.0, 184.0, 0.0},
+            EmoteLoop = true,
+            EmoteMoving = true,
+        }
+    }
 }
